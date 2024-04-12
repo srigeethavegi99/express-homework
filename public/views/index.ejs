@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Express - HW</title>
+</head>
+<body>
+    <p>Welcome to Many Books! This was started by 4 Bibiliophile friends to cherish and expand their interest and love towards book reading.</p>
+    <h1>Books List</h1>
+
+    <ul>
+        <% books.forEach(book => { %>
+          <li><a href="/books/<%= book.id %>"><%= book.title %></a></li>
+        <% }); %>
+    </ul>
+    <br />
+
+    <form action="/books" method="post">
+        <label for="title">Add a new book:</label>
+        <input type="text" id="title" name="title" required><br>
+        <button type="submit">Add book</button>
+    </form>
+</body>
+</html>
